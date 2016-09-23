@@ -1,11 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="en"><!-- no-js is removed by modernizer for new browsers -->
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- user-scalable=no -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- user-scalable=no might cause Accessibility problems -->
         <title></title>
         <meta name="description" content="">
+
+        <!-- Style Android Chrome URL bar, etc -->
+        <meta name="theme-color" content="#000000">
+
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" href="favicon.ico" />
@@ -134,7 +138,7 @@
 
         <!-- SCRIPTS- jQuery first -->
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
+        <!--  local fallback for Jquery  -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
         </script>
         <script src="js/plugins.js"></script>
@@ -152,5 +156,28 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script> -->
+
+        <!--
+        MOVE/INCLUDE this js where appropriate:
+        Consider using FastClick to remove the 300ms delay on sites where drag or long-touch detection is not needed: https://ftlabs.github.io/fastclick/
+        Also consider this not-well-supported style: .btn{touch-action: none;}
+        -Sometimes you need FastClick to ignore certain elements. You can do this easily by adding the needsclick class...like Bootstrap 2.2.2 dropdowns, 
+
+        -->
+        <!--
+        <script src='js/vendor/fastclick-1.0.6.min.js'></script>
+
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
+            /*  OR, is no jQuery:   */
+            /*
+            window.addEventListener('load', function() {
+                new FastClick(document.body);
+            }, false);
+            */
+        </script>
+        -->
     </body>
 </html>

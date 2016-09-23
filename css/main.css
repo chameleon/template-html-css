@@ -33,9 +33,12 @@ footer bg 333333
    ========================================================================== */
 
 html {
-    //color: #222;
-    //font-size: 1em;
+    /*
+    color: #222;
+    font-size: 1em;  */
     line-height: 1.4;
+    -webkit-font-smoothing: antialiased; 
+    overflow-y: scroll; /*content can jump side to side. By forcing a scrollbar no matter the height of our content, we stop this small, but annoying issue.*/
 }
 
 /*
@@ -88,6 +91,10 @@ video {
     */
 }
 
+/*IE7 image resizing improvement*/
+/* bicubic resizing for non-native sized IMG: code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
 /*
  * Remove default fieldset styles.
  */
@@ -100,8 +107,7 @@ fieldset {
 
 /*
  * Allow only vertical resizing of textareas.
- */
-
+*/
 textarea {
     resize: vertical;
 }
@@ -116,6 +122,51 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+/* screenreaders tabbing through links, and mouse users */
+a:hover, a:active { outline: none; }
+a, a:active, a:visited { color:#607890; }
+a:hover { color:#036; }
+
+/* Reward button interaction with various hover states:*/
+.btn {
+  background-color: #0087F7;
+}
+.btn:hover {
+  background-color: #006DDE;
+  transition: 0.3s ease all;
+}
+.btn:focus {
+  background-color: #0053C4;
+  transition: 0.3s ease all;
+}
+.btn:active {
+  background-color: #0039AA;
+  transition: 0.3s ease all;
+}
+/* And, On devices that allow this to be overridden, there is a highlight color that appears when you tap the element. Many choose to hide it entirely with a transparent highlight: */
+.btn {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* Also consider this not-well-supported option, where drag or long-touch detection is not needed: https://ftlabs.github.io/fastclick/*/ 
+.btn {
+    touch-action: none;
+}
+
+/* To fix svg graphics overflow bug in IE 9: */
+svg:not(:root) { overflow: hidden; }
+
+/* ==========================================================================
+   FORMS default styles
+   ========================================================================== */
+
+/* align checkboxes, radios, text inputs with their label */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
 
 /* ==========================================================================
    Custom styles (in the B.E.M. convention)
@@ -394,9 +445,8 @@ Flex VERTICAL CENTER it:
                    (min-resolution: 120dpi) {
                 /* Style adjustments for high resolution devices */
             }
-/// END media queries  //
 /* ==========================================================================
-   Print styles.
+   Print styles...should always be included last, so that the other styles can be overwritten.!!
    Inlined to avoid the additional HTTP request:
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
@@ -417,6 +467,7 @@ Flex VERTICAL CENTER it:
     a,
     a:visited {
         text-decoration: underline;
+        /* color: #444 !important; */
     }
 
     a[href]:after {
@@ -457,10 +508,12 @@ Flex VERTICAL CENTER it:
         page-break-inside: avoid;
     }
 
+    /* Ensures that no images reach the outer bounds of the normal page view. */
     img {
         max-width: 100% !important;
     }
 
+    /* Content "widows" are really ugly, both on the screen and on paper. This bit of CSS magic prevents widows and orphans on heading and paragraph tags */
     p,
     h2,
     h3 {
@@ -473,4 +526,3 @@ Flex VERTICAL CENTER it:
         page-break-after: avoid;
     }
 }
-////////  END Printed styles  /////////
