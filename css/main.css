@@ -1,0 +1,476 @@
+
+/*
+Gather info
+Site/Page name:
+max-width of content:  940px;
+header max-height: 138
+hero max-height: 344
+max num columns: 3
+column max-width: 320
+thmbnail max-w  284 plus border
+social icons max-w 50
+input 296
+button 164
+
+page bg #282828
+header bg dark 1d1d1d
+footer bg 333333
+
+
+
+*/
+
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    //color: #222;
+    //font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+
+    /* //responsive alternative for vertical centering:
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    */
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Custom styles (in the B.E.M. convention)
+    inline media queries get serialized by the browser. @media only screen and (min-width: 640px;) {}
+   ========================================================================== */
+.root{
+    font-size: 62.5%;
+}
+.html{
+    font-size: 62.5%; /* rems are relative to this.  In the body tag, universal font-size is reset back to 100% via 1.6 rem. */
+    
+    /* 
+    em based media-query breakpoints - then layouts will respond to different 
+    font sizing too.  https://zellwk.com/blog/media-query-units/
+    em used for component spacing
+    em used for elements?  h1, h2 ?
+    rem used for vertical spacing
+    */
+}
+
+.body{
+    /* set default page font to 16px.  
+    em font sizes later reference this but careful of nesting.
+    rem box vertical margins/padding reference html tage 62.5%
+    */
+    font-size: 1.6rem;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.page-wrapper{
+    /* try not to use a page wrapper for layout. ok for styling*/
+    // height: rem;
+    // width: %;
+}
+
+//  HEADER
+.header-wrapper{
+
+}
+.header{
+
+}
+
+.logo{
+
+}
+
+.header__title{
+
+}
+
+.header__title--arrow{
+
+}
+
+.nav{
+    //flex box
+}
+//////// FLEX NAV
+
+.main-nav {
+  background: #eee;
+}
+.main-nav  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+  }
+.main-nav  a {
+    padding: 1.25rem 0.5rem;
+    font-size: 1.6rem;
+    max-width: 140px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    color: #333;
+}
+
+.main-nav  a:hover, .main-nav  a:focus {
+      background: #ccc;
+      color: black;
+
+}
+.main-nav  span {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #888;
+    margin: 0.25rem 0 0 0;
+  }
+.main-nav .icon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 1rem;
+    fill: #999;
+  }
+.main-nav.outlines *{
+    
+      outline: 1px solid rgba(red, 0.5); 
+}
+
+
+
+\\\\\\\\\\\   END FLEX NAV
+
+.hero-wrapper{
+
+}
+.hero{
+
+}
+
+
+/* CONTENT */
+.content-wrapper{
+
+}
+.content{
+
+}
+// css columns
+.grid-container{
+
+}
+// grid colums
+.columns-container{
+
+}
+// slider
+.slider-wrapper{
+
+}
+.slider{
+
+}
+
+// FOOTER
+.footer-wrapper{
+
+}
+.footer{
+
+}
+.footer__title{
+
+}
+.footer__title:hover{
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+// Responsive image
+.responsive-image{
+    max-width:100%;  //(to fill container...but you can’t add a height tag for this to work)
+    //to center an image with margin:0 auto; need to set display:block;
+    display:block;
+    margin:0 auto;  //center
+}
+// Responsive video
+.responsive-video{
+    max-width:100%;
+}
+
+//responsive- vertically-centered
+.vertically-centered{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*
+Flex VERTICAL CENTER it:
+.cn {
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  align-self: center;
+}
+*/
+
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+                .visuallyhidden {
+                    border: 0;
+                    clip: rect(0 0 0 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                }
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+                .visuallyhidden.focusable:active,
+                .visuallyhidden.focusable:focus {
+                    clip: auto;
+                    height: auto;
+                    margin: 0;
+                    overflow: visible;
+                    position: static;
+                    width: auto;
+                }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* em instead of pixels - layouts respond to user font size settings in browser, 
+    not just pixels.  35em is 35 X 16px = 560px */
+
+
+}
+
+            @media print,
+                   (-webkit-min-device-pixel-ratio: 1.25),
+                   (min-resolution: 1.25dppx),
+                   (min-resolution: 120dpi) {
+                /* Style adjustments for high resolution devices */
+            }
+/// END media queries  //
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+////////  END Printed styles  /////////
